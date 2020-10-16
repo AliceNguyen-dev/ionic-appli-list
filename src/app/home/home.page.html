@@ -1,0 +1,26 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title>
+      Task
+    </ion-title>
+    <ion-buttons slot="end">
+      <span class="todoNb">
+        {{tasks.length}}
+      </span>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+
+  <!-- Liste des Task à faire -->
+  <ion-list>
+
+    <ion-item *ngFor="let task of tasks">
+      <ion-label [class.done]="task.status == true"> {{task.title}} </ion-label>
+      <ion-checkbox color="dark" slot="start" [(ngModel)]="task.status" ></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
